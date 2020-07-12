@@ -7,7 +7,9 @@ export default function Layout({ children }) {
     <>
       <GlobalStyle />
       <Navigation />
-      {children}
+      <div className="container">
+        <div className="content">{children}</div>
+      </div>
     </>
   );
 }
@@ -28,10 +30,15 @@ body{
   color: ${(props) => props.theme.textHigh};
 }
 .container{
-  display: block;
-  margin: auto;
-  max-width: 40rem;
+  display: flex;
+  justify-content: center;
+  width:100%;
+}
+.content{
+  width:100%;
+  max-width: 35rem;
   margin: 1rem;
+
 }
 .text--high{
   color: ${(props) => props.theme.textHigh};
